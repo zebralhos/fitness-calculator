@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Metabolismo e Calorias</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="fas fa-dumbbell"></i> Calculadora Fitness</h1>
+    </header>
+
+    <!-- Seção de Informações Pessoais -->
+    <section class="info-section">
+      <h2><i class="fas fa-user"></i> Informações Pessoais</h2>
+      <div class="input-group">
+        <input type="number" id="weight" placeholder="Peso (kg)">
+        <input type="number" id="height" placeholder="Altura (cm)">
+        <input type="number" id="age" placeholder="Idade">
+        <select id="gender">
+          <option value="male">Masculino</option>
+          <option value="female">Feminino</option>
+        </select>
+        <button onclick="calculateBMR()">Calcular BMR</button>
+        <p id="bmr-result"></p>
+      </div>
+    </section>
+
+    <!-- Seção para Adicionar Calorias Diárias -->
+    <section class="calorie-tracker">
+      <h2><i class="fas fa-utensils"></i> Registro de Calorias Diárias</h2>
+      <div class="input-group">
+        <input type="number" id="calories" placeholder="Calorias ingeridas">
+        <button onclick="addCalories()">Adicionar Calorias</button>
+        <p id="total-calories">Total de Calorias do Dia: 0 kcal</p>
+      </div>
+    </section>
+
+    <!-- Gráfico de Calorias Diárias -->
+    <section class="chart-container">
+      <h2><i class="fas fa-chart-line"></i> Gráfico de Calorias</h2>
+      <canvas id="calorieChart"></canvas>
+    </section>
+
+    <!-- Registro de Peso Mensal -->
+    <section class="weight-tracker">
+      <h2><i class="fas fa-weight"></i> Registro de Peso Mensal</h2>
+      <div class="input-group">
+        <input type="number" id="monthly-weight" placeholder="Peso Atual (kg)">
+        <button onclick="addWeight()">Registrar Peso</button>
+        <p id="weight-records"></p>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
